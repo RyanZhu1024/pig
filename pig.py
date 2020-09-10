@@ -109,15 +109,13 @@ def show_final_results(computer_score, human_score):
         print("You lose, by {}".format(difference))
 
 def main():
-    global human_score
-    global computer_score
     computer_score = 0
     human_score = 0
     print_instructions()
     while True:
-        computer_move(computer_score,human_score)
+        computer_score = computer_move(computer_score,human_score)
         show_current_status(computer_score,human_score)
-        human_move(computer_score,human_score)
+        human_score = human_move(computer_score,human_score)
         show_current_status(computer_score,human_score)
         if is_game_over(computer_score,human_score) == False:
             continue
